@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Asgard</title>
+</head>
+<body>
+<div>
+<h3>A Website about Asgard</h3>
+</div>
+<div>
+{% for x in data %}
+    <button class="asgard_button" id="{{x.id}}">{{x.heading}}</button>
+{% endfor %}
+</div>
+<div><p id="message"></p></div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+    $('.asgard_button').click(function(){
+    var data_id;
+    data_id = $(this).attr("id");
+    $.ajax({
+    type:"GET",
+    url:"/asgard",
+    data:{
+        data_id: data_id
+    },
+    success: function(data){
+    $('#message').text(data);
+    }
+    })
+    });
+
+</script>
+</body>
+</html>

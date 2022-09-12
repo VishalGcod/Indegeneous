@@ -1,0 +1,6 @@
+asgiref==3.5.2
+Django==3.2.15
+pytz==2022.2.1
+sql-formatter==0.6.2
+sqlparse==0.4.2
+typing-extensions==4.3.0
